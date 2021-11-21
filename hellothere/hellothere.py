@@ -3,6 +3,7 @@ import subprocess
 import sqlalchemy.orm
 from flask import Flask, render_template, request, redirect, escape, Markup
 from .db import LocalSession
+from .models import Name
 
 
 app = Flask(__name__)
@@ -37,4 +38,6 @@ def index():
 
 @app.route("/<name>")
 def hello(name):
+    db_session.add(Name(name=name))
+    db_session.commit()
     return render_template("index.html", name=name)
