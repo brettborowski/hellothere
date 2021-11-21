@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <pre>{{ executable }}</pre>
+    <hr>
+    <pre>{{ version }}</pre>
+    <hr>
+    <pre>{% for p in path %}{{ p }}<br>{% endfor %}</pre>
+    <hr>
+    <pre>{{ pip_list }}</pre>
+{% endblock %}
