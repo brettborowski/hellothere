@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <pre>{{ executable }}</pre>
-    <hr>
-    <pre>{{ version }}</pre>
-    <hr>
-    <pre>{% for p in path %}{{ p }}<br>{% endfor %}</pre>
-    <hr>
-    <pre>{{ pip_list }}</pre>
+    <h1>Interpreter Info</h1>
+<div>
+        <b>Executable:</b><pre>{{ executable }}</pre>
+        <b>Version:</b><pre>{{ version }}</pre>
+        <b>Path: </b><pre>{% for p in path %}{{ p }}<br>{% endfor %}</pre>
+        <b>Packages: </b><pre>{{ pip_list }}</pre>
+    </div>
+    <h1>Database Info</h1>
+    <pre>{{ db_info }}</pre>
 {% endblock %}
