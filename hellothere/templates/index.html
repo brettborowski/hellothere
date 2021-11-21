@@ -2,10 +2,9 @@
 {% block content %}
     <h1>Hello, {{ name }}!</h1>
     <hr>
-    <form action="/" method="GET">
+    <form action="/" method="POST">
         <div class="input-group mb-3">
             <input type="text" class="form-control" name="name" placeholder="Enter name">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Say my name!</button>
         </div>
     </form>
 {% endblock %}

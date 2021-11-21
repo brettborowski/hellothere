@@ -1,7 +1,6 @@
 import sys
 import subprocess
 from flask import Flask, render_template, request, redirect
-from markupsafe import escape
 
 app = Flask(__name__)
 
@@ -21,12 +20,12 @@ def info():
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    if name := request.args.get("name"):
-        return redirect(f"/{escape(name)}")
+    if name := request.form.get("name"):
+        return redirect(f"/{name}")
     else:
         return hello("World")
 
 
 @app.route("/<name>")
 def hello(name):
-    return render_template("index.html", name=escape(name))
+    return render_template("index.html", name=name)
